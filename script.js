@@ -1,5 +1,6 @@
 /* ===================================
    7Iks — Café & Bar | Nazaré
+   Main Script
    =================================== */
 
 // ---- Menu Data ----
@@ -38,29 +39,29 @@ const menuData = {
             { name: "Tropical Breeze", price: "X.XX€", desc: "Sem álcool — manga, ananás" },
         ],
         "Vodka": [
-            { name: "Vodka Nacional", price: "X.XX€" },
-            { name: "Smirnoff", price: "X.XX€" },
-            { name: "Absolut", price: "X.XX€" },
+            { name: "Vodka Nacional", price: "X.XX€", desc: "" },
+            { name: "Smirnoff", price: "X.XX€", desc: "" },
+            { name: "Absolut", price: "X.XX€", desc: "" },
             { name: "Grey Goose", price: "X.XX€", desc: "Premium" },
         ],
         "Gin": [
-            { name: "Gin Nacional", price: "X.XX€" },
-            { name: "Gordons", price: "X.XX€" },
-            { name: "Tanqueray", price: "X.XX€" },
+            { name: "Gin Nacional", price: "X.XX€", desc: "" },
+            { name: "Gordons", price: "X.XX€", desc: "" },
+            { name: "Tanqueray", price: "X.XX€", desc: "" },
             { name: "Hendricks", price: "X.XX€", desc: "Premium" },
             { name: "Gin Mare", price: "X.XX€", desc: "Premium" },
         ],
         "Licores": [
-            { name: "Beirão", price: "X.XX€" },
-            { name: "Amarguinha", price: "X.XX€" },
-            { name: "Ginjinha", price: "X.XX€" },
-            { name: "Baileys", price: "X.XX€" },
-            { name: "Jägermeister", price: "X.XX€" },
+            { name: "Beirão", price: "X.XX€", desc: "" },
+            { name: "Amarguinha", price: "X.XX€", desc: "" },
+            { name: "Ginjinha", price: "X.XX€", desc: "" },
+            { name: "Baileys", price: "X.XX€", desc: "" },
+            { name: "Jägermeister", price: "X.XX€", desc: "" },
         ],
         "Whiskey": [
-            { name: "J&B", price: "X.XX€" },
-            { name: "Jameson", price: "X.XX€" },
-            { name: "Jack Daniel's", price: "X.XX€" },
+            { name: "J&B", price: "X.XX€", desc: "" },
+            { name: "Jameson", price: "X.XX€", desc: "" },
+            { name: "Jack Daniel's", price: "X.XX€", desc: "" },
             { name: "Johnnie Walker Black", price: "X.XX€", desc: "Premium" },
         ],
         "Rum & Tequila": [
@@ -71,11 +72,11 @@ const menuData = {
             { name: "Sierra", price: "X.XX€", desc: "Tequila" },
         ],
         "Aperitivos": [
-            { name: "Martini Branco", price: "X.XX€" },
-            { name: "Martini Rosso", price: "X.XX€" },
-            { name: "Porto Branco", price: "X.XX€" },
-            { name: "Porto Tinto", price: "X.XX€" },
-            { name: "Campari", price: "X.XX€" },
+            { name: "Martini Branco", price: "X.XX€", desc: "" },
+            { name: "Martini Rosso", price: "X.XX€", desc: "" },
+            { name: "Porto Branco", price: "X.XX€", desc: "" },
+            { name: "Porto Tinto", price: "X.XX€", desc: "" },
+            { name: "Campari", price: "X.XX€", desc: "" },
         ],
         "Shots": [
             { name: "Shot Simples", price: "X.XX€", desc: "À escolha" },
@@ -86,26 +87,26 @@ const menuData = {
     },
     cafetaria: {
         "Cafetaria": [
-            { name: "Café / Expresso", price: "X.XX€" },
-            { name: "Café Duplo", price: "X.XX€" },
-            { name: "Descafeinado", price: "X.XX€" },
-            { name: "Garoto", price: "X.XX€" },
-            { name: "Meia de Leite", price: "X.XX€" },
-            { name: "Galão", price: "X.XX€" },
-            { name: "Cappuccino", price: "X.XX€" },
+            { name: "Café / Expresso", price: "X.XX€", desc: "" },
+            { name: "Café Duplo", price: "X.XX€", desc: "" },
+            { name: "Descafeinado", price: "X.XX€", desc: "" },
+            { name: "Garoto", price: "X.XX€", desc: "" },
+            { name: "Meia de Leite", price: "X.XX€", desc: "" },
+            { name: "Galão", price: "X.XX€", desc: "" },
+            { name: "Cappuccino", price: "X.XX€", desc: "" },
             { name: "Café com Cheirinho", price: "X.XX€", desc: "Café + aguardente" },
             { name: "Chá", price: "X.XX€", desc: "Vários sabores" },
-            { name: "Chocolate Quente", price: "X.XX€" },
+            { name: "Chocolate Quente", price: "X.XX€", desc: "" },
         ],
         "Águas & Refrigerantes": [
-            { name: "Água 0.5L", price: "X.XX€" },
-            { name: "Água 1.5L", price: "X.XX€" },
-            { name: "Água com Gás", price: "X.XX€" },
-            { name: "Coca-Cola", price: "X.XX€" },
-            { name: "Coca-Cola Zero", price: "X.XX€" },
+            { name: "Água 0.5L", price: "X.XX€", desc: "" },
+            { name: "Água 1.5L", price: "X.XX€", desc: "" },
+            { name: "Água com Gás", price: "X.XX€", desc: "" },
+            { name: "Coca-Cola", price: "X.XX€", desc: "" },
+            { name: "Coca-Cola Zero", price: "X.XX€", desc: "" },
             { name: "Ice Tea", price: "X.XX€", desc: "Limão / Pêssego" },
             { name: "Sumol", price: "X.XX€", desc: "Laranja / Ananás" },
-            { name: "7Up", price: "X.XX€" },
+            { name: "7Up", price: "X.XX€", desc: "" },
             { name: "Compal", price: "X.XX€", desc: "Vários sabores" },
         ],
         "Sumos Naturais": [
@@ -119,127 +120,174 @@ const menuData = {
 };
 
 // ---- State ----
-let currentMode = 'bar';
-let currentCat = null;
+let currentMenuMode = 'bar';
+let currentCategory = null;
 
 // ---- DOM ----
 const body = document.body;
 const modeToggle = document.getElementById('modeToggle');
-const burger = document.getElementById('burger');
-const mobileNav = document.getElementById('mobileNav');
-const categories = document.getElementById('categories');
-const menuList = document.getElementById('menuList');
-const nav = document.getElementById('nav');
+const navBurger = document.getElementById('navBurger');
+const mobileMenu = document.getElementById('mobileMenu');
+const categoryPills = document.getElementById('categoryPills');
+const menuGrid = document.getElementById('menuGrid');
+const cursorGlow = document.getElementById('cursorGlow');
 
-// ---- Day/Night ----
-function setDayNight(mode) {
+// ---- Mode Toggle (Day/Night) ----
+function setMode(mode) {
     body.setAttribute('data-mode', mode);
     localStorage.setItem('7iks-mode', mode);
 }
 
-(function autoMode() {
+// Auto-detect: night mode after 19h
+function autoDetectMode() {
     const saved = localStorage.getItem('7iks-mode');
-    if (saved) { setDayNight(saved); return; }
-    const h = new Date().getHours();
-    setDayNight(h >= 19 || h < 7 ? 'night' : 'day');
-})();
+    if (saved) {
+        setMode(saved);
+        return;
+    }
+    const hour = new Date().getHours();
+    setMode(hour >= 19 || hour < 7 ? 'night' : 'day');
+}
 
 modeToggle.addEventListener('click', () => {
-    setDayNight(body.getAttribute('data-mode') === 'day' ? 'night' : 'day');
+    const current = body.getAttribute('data-mode');
+    setMode(current === 'day' ? 'night' : 'day');
 });
 
-// ---- Mobile Nav ----
-burger.addEventListener('click', () => {
-    burger.classList.toggle('open');
-    mobileNav.classList.toggle('open');
-    body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+autoDetectMode();
+
+// ---- Mobile Menu ----
+navBurger.addEventListener('click', () => {
+    navBurger.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+    body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
 });
 
-mobileNav.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-        burger.classList.remove('open');
-        mobileNav.classList.remove('open');
+document.querySelectorAll('.mobile-menu-link').forEach(link => {
+    link.addEventListener('click', () => {
+        navBurger.classList.remove('active');
+        mobileMenu.classList.remove('active');
         body.style.overflow = '';
     });
 });
 
-// ---- Nav scroll shadow ----
-window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 10);
-}, { passive: true });
+// ---- Cursor Glow (desktop) ----
+if (window.matchMedia('(pointer: fine)').matches) {
+    let mouseX = 0, mouseY = 0;
+    let glowX = 0, glowY = 0;
 
-// ---- Menu ----
-function renderCategories() {
-    const cats = Object.keys(menuData[currentMode]);
-    currentCat = cats[0];
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
 
-    categories.innerHTML = cats.map((c, i) =>
-        `<button class="cat-btn${i === 0 ? ' active' : ''}" data-cat="${c}">${c}</button>`
+    function animateGlow() {
+        glowX += (mouseX - glowX) * 0.08;
+        glowY += (mouseY - glowY) * 0.08;
+        cursorGlow.style.left = glowX + 'px';
+        cursorGlow.style.top = glowY + 'px';
+        requestAnimationFrame(animateGlow);
+    }
+    animateGlow();
+}
+
+// ---- Menu Rendering ----
+function getCategories(mode) {
+    return Object.keys(menuData[mode]);
+}
+
+function renderCategoryPills(mode) {
+    const categories = getCategories(mode);
+    currentCategory = categories[0];
+
+    categoryPills.innerHTML = categories.map((cat, i) =>
+        `<button class="category-pill${i === 0 ? ' active' : ''}" data-category="${cat}">${cat}</button>`
     ).join('');
 
-    categories.querySelectorAll('.cat-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            currentCat = btn.dataset.cat;
-            categories.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            renderItems();
+    categoryPills.querySelectorAll('.category-pill').forEach(pill => {
+        pill.addEventListener('click', () => {
+            currentCategory = pill.dataset.category;
+            categoryPills.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active'));
+            pill.classList.add('active');
+            renderMenuItems();
         });
     });
 }
 
-function renderItems() {
-    const items = menuData[currentMode][currentCat] || [];
-    menuList.innerHTML = items.map(item =>
-        `<div class="menu-row">
-            <div class="menu-row-left">
-                <div class="menu-row-name">
+function renderMenuItems() {
+    const items = menuData[currentMenuMode][currentCategory] || [];
+    menuGrid.innerHTML = items.map((item, i) =>
+        `<div class="menu-item" style="animation-delay: ${i * 0.05}s">
+            <div class="menu-item-info">
+                <div class="menu-item-name">
                     ${item.name}
-                    ${item.badge ? `<span class="menu-row-badge">${item.badge}</span>` : ''}
+                    ${item.badge ? `<span class="menu-item-badge">${item.badge}</span>` : ''}
                 </div>
-                ${item.desc ? `<div class="menu-row-desc">${item.desc}</div>` : ''}
+                ${item.desc ? `<div class="menu-item-desc">${item.desc}</div>` : ''}
             </div>
-            <div class="menu-row-price">${item.price}</div>
+            <div class="menu-item-price">${item.price}</div>
         </div>`
     ).join('');
 }
 
-document.querySelectorAll('.menu-tab').forEach(tab => {
+// Menu mode tabs
+document.querySelectorAll('.menu-mode-tab').forEach(tab => {
     tab.addEventListener('click', () => {
-        document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.menu-mode-tab').forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
-        currentMode = tab.dataset.menuMode;
-        renderCategories();
-        renderItems();
+        currentMenuMode = tab.dataset.menuMode;
+        renderCategoryPills(currentMenuMode);
+        renderMenuItems();
     });
 });
 
-renderCategories();
-renderItems();
+// Init menu
+renderCategoryPills(currentMenuMode);
+renderMenuItems();
 
-// ---- Smooth scroll ----
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', function (e) {
+// ---- Scroll Reveal ----
+const revealElements = document.querySelectorAll('.espaco-card, .pedir-card');
+
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -40px 0px'
+});
+
+revealElements.forEach(el => revealObserver.observe(el));
+
+// ---- Nav Background on Scroll ----
+const nav = document.getElementById('nav');
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+
+    // Add shadow on scroll
+    if (scrollY > 20) {
+        nav.style.boxShadow = 'var(--shadow)';
+    } else {
+        nav.style.boxShadow = 'none';
+    }
+
+    lastScroll = scrollY;
+}, { passive: true });
+
+// ---- Smooth anchor scrolling with offset ----
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            window.scrollTo({
-                top: target.getBoundingClientRect().top + window.scrollY - 65,
-                behavior: 'smooth'
-            });
+            const offset = 70;
+            const top = target.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({ top, behavior: 'smooth' });
         }
     });
 });
-
-// ---- Scroll reveal ----
-document.querySelectorAll('.espaco-block, .step').forEach(el => el.classList.add('reveal'));
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-        if (e.isIntersecting) {
-            e.target.classList.add('visible');
-            observer.unobserve(e.target);
-        }
-    });
-}, { threshold: 0.15 });
-
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
