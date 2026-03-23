@@ -4,261 +4,164 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>7Iks — Café & Bar | Nazaré</title>
-    <meta name="description" content="7Iks — Café de dia, bar de noite. Na praça central da Nazaré. Café, cocktails, sangrias e muito mais.">
+    <meta name="description" content="7Iks — Café de dia, bar de noite. Na praça central da Nazaré.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body data-mode="day">
 
-    <!-- Cursor follower -->
-    <div class="cursor-glow" id="cursorGlow"></div>
-
-    <!-- Wave background -->
-    <div class="wave-container" id="waveContainer">
-        <svg class="wave wave-1" viewBox="0 0 1440 320" preserveAspectRatio="none">
-            <path d="M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,165.3C672,171,768,213,864,218.7C960,224,1056,192,1152,165.3C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-        </svg>
-        <svg class="wave wave-2" viewBox="0 0 1440 320" preserveAspectRatio="none">
-            <path d="M0,224L48,213.3C96,203,192,181,288,186.7C384,192,480,224,576,229.3C672,235,768,213,864,192C960,171,1056,149,1152,154.7C1248,160,1344,192,1392,208L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-        </svg>
-        <svg class="wave wave-3" viewBox="0 0 1440 320" preserveAspectRatio="none">
-            <path d="M0,288L48,272C96,256,192,224,288,213.3C384,203,480,213,576,229.3C672,245,768,267,864,261.3C960,256,1056,224,1152,213.3C1248,203,1344,213,1392,218.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-        </svg>
-    </div>
-
-    <!-- Navigation -->
+    <!-- Nav -->
     <nav class="nav" id="nav">
-        <div class="nav-inner">
-            <a href="#hero" class="nav-logo">7Iks</a>
-            <div class="nav-links" id="navLinks">
-                <a href="#menu" class="nav-link">Menu</a>
-                <a href="#espaco" class="nav-link">Espaço</a>
-                <a href="#pedir" class="nav-link">Pedir</a>
-                <a href="#contacto" class="nav-link">Contacto</a>
-            </div>
-            <div class="nav-actions">
-                <button class="mode-toggle" id="modeToggle" aria-label="Alternar modo dia/noite">
-                    <span class="mode-icon mode-icon--sun">☀️</span>
-                    <span class="mode-icon mode-icon--moon">🌙</span>
-                    <span class="mode-slider"></span>
-                </button>
-                <button class="nav-burger" id="navBurger" aria-label="Menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
+        <a href="#hero" class="nav-logo">7<span>Iks</span></a>
+        <div class="nav-center" id="navLinks">
+            <a href="#menu">Menu</a>
+            <a href="#espaco">Espaço</a>
+            <a href="#pedir">Pedir</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+        <div class="nav-right">
+            <button class="mode-toggle" id="modeToggle" aria-label="Dia / Noite">
+                <span class="toggle-day">Dia</span>
+                <span class="toggle-night">Noite</span>
+            </button>
+            <button class="burger" id="burger" aria-label="Menu">
+                <span></span><span></span>
+            </button>
         </div>
     </nav>
 
-    <!-- Mobile menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#menu" class="mobile-menu-link">Menu</a>
-        <a href="#espaco" class="mobile-menu-link">Espaço</a>
-        <a href="#pedir" class="mobile-menu-link">Pedir</a>
-        <a href="#contacto" class="mobile-menu-link">Contacto</a>
+    <!-- Mobile nav -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#menu">Menu</a>
+        <a href="#espaco">Espaço</a>
+        <a href="#pedir">Pedir</a>
+        <a href="#contacto">Contacto</a>
     </div>
 
     <!-- Hero -->
-    <section class="hero" id="hero">
-        <div class="hero-content">
-            <div class="hero-badge" id="heroBadge">
-                <span class="hero-badge-text day-text">Bom dia ☀️</span>
-                <span class="hero-badge-text night-text">Boa noite 🌙</span>
-            </div>
-            <h1 class="hero-title">
-                <span class="hero-title-line">
-                    <span class="hero-title-word" data-animate>7</span><span class="hero-title-word accent" data-animate>Iks</span>
-                </span>
-            </h1>
-            <p class="hero-subtitle">
-                <span class="day-text">Café com vista para a praça. Nazaré.</span>
-                <span class="night-text">A noite começa aqui. Nazaré.</span>
+    <header class="hero" id="hero">
+        <div class="hero-inner">
+            <p class="hero-location">Praça Central — Nazaré</p>
+            <h1 class="hero-title">7<span>Iks</span></h1>
+            <p class="hero-tagline">
+                <span class="day-text">Café com alma, <em>na praça.</em></span>
+                <span class="night-text">A noite começa <em>aqui.</em></span>
             </p>
-            <div class="hero-cta">
-                <a href="#menu" class="btn btn-primary">Ver Menu</a>
-                <a href="#pedir" class="btn btn-outline">Fazer Pedido</a>
-            </div>
-            <div class="hero-scroll">
-                <div class="hero-scroll-line"></div>
-                <span>scroll</span>
-            </div>
-        </div>
-        <div class="hero-ambient"></div>
-    </section>
-
-    <!-- Info strip -->
-    <section class="info-strip">
-        <div class="info-strip-inner">
-            <div class="info-item">
-                <span class="info-icon">📍</span>
-                <span class="info-text">Praça Central, Nazaré</span>
-            </div>
-            <div class="info-divider"></div>
-            <div class="info-item">
-                <span class="info-icon">🕐</span>
-                <span class="info-text day-text">Seg-Qui & Dom: 10h – 00h</span>
-                <span class="info-text night-text">Sex & Sáb: 10h – 02h</span>
-            </div>
-            <div class="info-divider"></div>
-            <div class="info-item">
-                <span class="info-icon">🪑</span>
-                <span class="info-text">69 Lugares · Esplanada & Interior</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Menu Section -->
-    <section class="menu-section" id="menu">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">O que servimos</span>
-                <h2 class="section-title">Menu</h2>
-            </div>
-
-            <!-- Menu mode tabs -->
-            <div class="menu-mode-tabs">
-                <button class="menu-mode-tab active" data-menu-mode="bar">
-                    <span class="menu-mode-icon">🍸</span>
-                    Bar
-                </button>
-                <button class="menu-mode-tab" data-menu-mode="cafetaria">
-                    <span class="menu-mode-icon">☕</span>
-                    Cafetaria
-                </button>
-            </div>
-
-            <!-- Category pills (horizontal scroll) -->
-            <div class="category-scroll-wrapper">
-                <div class="category-pills" id="categoryPills">
-                    <!-- Filled by JS -->
+            <div class="hero-hours">
+                <div class="hours-item">
+                    <strong>Seg — Qui & Dom</strong>
+                    <span>10h – 00h</span>
+                </div>
+                <div class="hours-divider"></div>
+                <div class="hours-item">
+                    <strong>Sex & Sáb</strong>
+                    <span>10h – 02h</span>
                 </div>
             </div>
+            <a href="#menu" class="hero-btn">Ver Menu ↓</a>
+        </div>
+    </header>
 
-            <!-- Menu items grid -->
-            <div class="menu-grid" id="menuGrid">
-                <!-- Filled by JS -->
+    <!-- Menu -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <h2 class="heading">Menu</h2>
+
+            <div class="menu-tabs">
+                <button class="menu-tab active" data-menu-mode="bar">🍸 Bar</button>
+                <button class="menu-tab" data-menu-mode="cafetaria">☕ Cafetaria</button>
             </div>
+
+            <div class="categories" id="categories"></div>
+
+            <div class="menu-list" id="menuList"></div>
         </div>
     </section>
 
-    <!-- Espaço Section -->
-    <section class="espaco-section" id="espaco">
+    <!-- Espaço -->
+    <section class="espaco" id="espaco">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Onde estamos</span>
-                <h2 class="section-title">O Espaço</h2>
-            </div>
+            <h2 class="heading">O Espaço</h2>
             <div class="espaco-grid">
-                <div class="espaco-card">
-                    <div class="espaco-card-icon">☀️</div>
+                <div class="espaco-block">
+                    <div class="espaco-emoji">☀️</div>
                     <h3>De Dia</h3>
-                    <p>Café, sumos naturais e boa companhia na esplanada com vista para a praça. O sítio perfeito para começar o dia na Nazaré.</p>
-                    <div class="espaco-stats">
-                        <div class="espaco-stat">
-                            <span class="stat-number">12</span>
-                            <span class="stat-label">Mesas esplanada</span>
-                        </div>
-                        <div class="espaco-stat">
-                            <span class="stat-number">48</span>
-                            <span class="stat-label">Lugares fora</span>
-                        </div>
+                    <p>Café, sumos naturais e boa companhia na esplanada com vista para a praça. O sítio perfeito para uma pausa na Nazaré.</p>
+                    <div class="espaco-nums">
+                        <div><strong>12</strong> mesas fora</div>
+                        <div><strong>48</strong> lugares</div>
                     </div>
                 </div>
-                <div class="espaco-card">
-                    <div class="espaco-card-icon">🌙</div>
+                <div class="espaco-block">
+                    <div class="espaco-emoji">🌙</div>
                     <h3>De Noite</h3>
-                    <p>Cocktails, shots e música. O 7Iks transforma-se no ponto de encontro da noite na Nazaré. Imperial sempre a correr.</p>
-                    <div class="espaco-stats">
-                        <div class="espaco-stat">
-                            <span class="stat-number">7</span>
-                            <span class="stat-label">Mesas interior</span>
-                        </div>
-                        <div class="espaco-stat">
-                            <span class="stat-number">21</span>
-                            <span class="stat-label">Lugares dentro</span>
-                        </div>
+                    <p>Cocktails, shots e música. O 7Iks transforma-se no ponto de encontro da noite. Imperial sempre a correr.</p>
+                    <div class="espaco-nums">
+                        <div><strong>7</strong> mesas dentro</div>
+                        <div><strong>21</strong> lugares</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pedir Section -->
-    <section class="pedir-section" id="pedir">
+    <!-- Pedir -->
+    <section class="pedir" id="pedir">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Rápido & Fácil</span>
-                <h2 class="section-title">Faz o teu pedido</h2>
-            </div>
-            <div class="pedir-grid">
-                <div class="pedir-card">
-                    <div class="pedir-step">1</div>
-                    <div class="pedir-card-icon">📱</div>
-                    <h3>Lê o QR Code</h3>
-                    <p>Na tua mesa vais encontrar um QR code. Aponta a câmara e abre o link.</p>
+            <h2 class="heading">Faz o teu pedido</h2>
+            <p class="pedir-sub">Na tua mesa tens um QR code. Lê, escolhe e nós levamos à mesa.</p>
+            <div class="pedir-steps">
+                <div class="step">
+                    <span class="step-num">1</span>
+                    <h4>Lê o QR Code</h4>
+                    <p>Aponta a câmara ao código na mesa.</p>
                 </div>
-                <div class="pedir-card">
-                    <div class="pedir-step">2</div>
-                    <div class="pedir-card-icon">📋</div>
-                    <h3>Escolhe do Menu</h3>
-                    <p>Navega pelo menu, escolhe o que te apetece e adiciona ao pedido.</p>
+                <div class="step">
+                    <span class="step-num">2</span>
+                    <h4>Escolhe</h4>
+                    <p>Navega pelo menu e faz o pedido.</p>
                 </div>
-                <div class="pedir-card">
-                    <div class="pedir-step">3</div>
-                    <div class="pedir-card-icon">🍺</div>
-                    <h3>Recebe na Mesa</h3>
-                    <p>Confirma o pedido e nós levamos tudo à tua mesa. Simples.</p>
+                <div class="step">
+                    <span class="step-num">3</span>
+                    <h4>Recebe</h4>
+                    <p>Nós tratamos do resto.</p>
                 </div>
             </div>
-            <div class="pedir-cta">
-                <a href="https://biip.app/7iks" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
-                    Pedir pelo Biip
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                    </svg>
-                </a>
-            </div>
+            <a href="https://biip.app/7iks" target="_blank" rel="noopener" class="btn-pedir">Pedir pelo Biip →</a>
         </div>
     </section>
 
-    <!-- Footer / Contact -->
+    <!-- Footer -->
     <footer class="footer" id="contacto">
         <div class="container">
-            <div class="footer-grid">
+            <div class="footer-top">
                 <div class="footer-brand">
-                    <span class="footer-logo">7Iks</span>
+                    <span class="footer-logo">7<span>Iks</span></span>
                     <p>Café de dia, bar de noite.<br>Na praça central da Nazaré.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Horário</h4>
-                    <p>Seg – Qui & Dom<br><strong>10:00 – 00:00</strong></p>
-                    <p>Sex & Sáb<br><strong>10:00 – 02:00</strong></p>
+                    <p>Seg — Qui & Dom: <strong>10h – 00h</strong></p>
+                    <p>Sex & Sáb: <strong>10h – 02h</strong></p>
                 </div>
                 <div class="footer-col">
                     <h4>Contacto</h4>
-                    <p>Praça Central<br>Nazaré, Portugal</p>
-                    <a href="tel:+351000000000" class="footer-link">+351 000 000 000</a>
+                    <p>Praça Central, Nazaré</p>
+                    <a href="tel:+351000000000">+351 000 000 000</a>
                 </div>
                 <div class="footer-col">
                     <h4>Social</h4>
-                    <div class="footer-socials">
-                        <a href="#" class="footer-social" aria-label="Instagram" target="_blank" rel="noopener">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
-                        </a>
-                        <a href="#" class="footer-social" aria-label="Facebook" target="_blank" rel="noopener">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-                        </a>
-                        <a href="#" class="footer-social" aria-label="TikTok" target="_blank" rel="noopener">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg>
-                        </a>
+                    <div class="socials">
+                        <a href="#" aria-label="Instagram">Instagram</a>
+                        <a href="#" aria-label="Facebook">Facebook</a>
+                        <a href="#" aria-label="TikTok">TikTok</a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 7Iks — Nazaré. Todos os direitos reservados.</p>
+                <p>© 2025 7Iks — Nazaré</p>
             </div>
         </div>
     </footer>
