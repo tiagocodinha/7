@@ -1,6 +1,5 @@
 /* ===================================
-   7Iks — Café & Bar | Nazaré
-   Main Script
+   7Iks — Menu Page Script
    =================================== */
 
 // ---- Menu Data ----
@@ -32,11 +31,6 @@ const menuData = {
             { name: "Piña Colada", price: "X.XX€", desc: "Rum, coco, ananás" },
             { name: "Margarita", price: "X.XX€", desc: "Tequila, triple sec, lima" },
             { name: "Sex on the Beach", price: "X.XX€", desc: "Vodka, pêssego, laranja" },
-        ],
-        "Mocktails": [
-            { name: "Virgin Mojito", price: "X.XX€", desc: "Sem álcool — hortelã, lima" },
-            { name: "Sunrise", price: "X.XX€", desc: "Sem álcool — laranja, grenadine" },
-            { name: "Tropical Breeze", price: "X.XX€", desc: "Sem álcool — manga, ananás" },
         ],
         "Vodka": [
             { name: "Vodka Nacional", price: "X.XX€", desc: "" },
@@ -125,51 +119,12 @@ let currentCategory = null;
 
 // ---- DOM ----
 const body = document.body;
-const modeToggle = document.getElementById('modeToggle');
-const navBurger = document.getElementById('navBurger');
-const mobileMenu = document.getElementById('mobileMenu');
 const categoryPills = document.getElementById('categoryPills');
-const menuGrid = document.getElementById('menuGrid');
+const menuContent = document.getElementById('menuContent');
 const cursorGlow = document.getElementById('cursorGlow');
 
-// ---- Mode Toggle (Day/Night) ----
-function setMode(mode) {
-    body.setAttribute('data-mode', mode);
-    localStorage.setItem('7iks-mode', mode);
-}
-
-// Auto-detect: night mode after 19h
-function autoDetectMode() {
-    const saved = localStorage.getItem('7iks-mode');
-    if (saved) {
-        setMode(saved);
-        return;
-    }
-    const hour = new Date().getHours();
-    setMode(hour >= 19 || hour < 7 ? 'night' : 'day');
-}
-
-modeToggle.addEventListener('click', () => {
-    const current = body.getAttribute('data-mode');
-    setMode(current === 'day' ? 'night' : 'day');
-});
-
-autoDetectMode();
-
-// ---- Mobile Menu ----
-navBurger.addEventListener('click', () => {
-    navBurger.classList.toggle('active');
-    mobileMenu.classList.toggle('active');
-    body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-});
-
-document.querySelectorAll('.mobile-menu-link').forEach(link => {
-    link.addEventListener('click', () => {
-        navBurger.classList.remove('active');
-        mobileMenu.classList.remove('active');
-        body.style.overflow = '';
-    });
-});
+// ---- Always Day Mode ----
+body.setAttribute('data-mode', 'day');
 
 // ---- Cursor Glow (desktop) ----
 if (window.matchMedia('(pointer: fine)').matches) {
@@ -198,36 +153,48 @@ function getCategories(mode) {
 
 function renderCategoryPills(mode) {
     const categories = getCategories(mode);
-    currentCategory = categories[0];
+    currentCategory = null;
 
-    categoryPills.innerHTML = categories.map((cat, i) =>
-        `<button class="category-pill${i === 0 ? ' active' : ''}" data-category="${cat}">${cat}</button>`
-    ).join('');
+    categoryPills.innerHTML =
+        `<button class="category-pill active" data-category="all">Todos</button>` +
+        categories.map(cat =>
+            `<button class="category-pill" data-category="${cat}">${cat}</button>`
+        ).join('');
 
     categoryPills.querySelectorAll('.category-pill').forEach(pill => {
         pill.addEventListener('click', () => {
-            currentCategory = pill.dataset.category;
+            currentCategory = pill.dataset.category === 'all' ? null : pill.dataset.category;
             categoryPills.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active'));
             pill.classList.add('active');
-            renderMenuItems();
+            renderMenu();
         });
     });
 }
 
-function renderMenuItems() {
-    const items = menuData[currentMenuMode][currentCategory] || [];
-    menuGrid.innerHTML = items.map((item, i) =>
-        `<div class="menu-item" style="animation-delay: ${i * 0.05}s">
-            <div class="menu-item-info">
-                <div class="menu-item-name">
-                    ${item.name}
-                    ${item.badge ? `<span class="menu-item-badge">${item.badge}</span>` : ''}
-                </div>
-                ${item.desc ? `<div class="menu-item-desc">${item.desc}</div>` : ''}
+function renderMenu() {
+    const data = menuData[currentMenuMode];
+    const categoriesToRender = currentCategory ? { [currentCategory]: data[currentCategory] } : data;
+
+    let html = '';
+    for (const [category, items] of Object.entries(categoriesToRender)) {
+        html += `<div class="menu-category-block">
+            <h3 class="menu-category-title">${category}</h3>
+            <div class="menu-list">
+                ${items.map((item, i) =>
+                    `<div class="menu-row" style="animation-delay: ${i * 0.03}s">
+                        <div class="menu-row-left">
+                            <span class="menu-row-name">${item.name}${item.badge ? `<span class="menu-item-badge">${item.badge}</span>` : ''}</span>
+                            ${item.desc ? `<span class="menu-row-desc">${item.desc}</span>` : ''}
+                        </div>
+                        <span class="menu-row-dots"></span>
+                        <span class="menu-row-price">${item.price}</span>
+                    </div>`
+                ).join('')}
             </div>
-            <div class="menu-item-price">${item.price}</div>
-        </div>`
-    ).join('');
+        </div>`;
+    }
+
+    menuContent.innerHTML = html;
 }
 
 // Menu mode tabs
@@ -237,57 +204,21 @@ document.querySelectorAll('.menu-mode-tab').forEach(tab => {
         tab.classList.add('active');
         currentMenuMode = tab.dataset.menuMode;
         renderCategoryPills(currentMenuMode);
-        renderMenuItems();
+        renderMenu();
     });
 });
 
-// Init menu
+// Init
 renderCategoryPills(currentMenuMode);
-renderMenuItems();
-
-// ---- Scroll Reveal ----
-const revealElements = document.querySelectorAll('.espaco-card, .pedir-card');
-
-const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            revealObserver.unobserve(entry.target);
-        }
-    });
-}, {
-    threshold: 0.15,
-    rootMargin: '0px 0px -40px 0px'
-});
-
-revealElements.forEach(el => revealObserver.observe(el));
+renderMenu();
 
 // ---- Nav Background on Scroll ----
 const nav = document.getElementById('nav');
-let lastScroll = 0;
 
 window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-
-    // Add shadow on scroll
-    if (scrollY > 20) {
+    if (window.scrollY > 20) {
         nav.style.boxShadow = 'var(--shadow)';
     } else {
         nav.style.boxShadow = 'none';
     }
-
-    lastScroll = scrollY;
 }, { passive: true });
-
-// ---- Smooth anchor scrolling with offset ----
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const offset = 70;
-            const top = target.getBoundingClientRect().top + window.scrollY - offset;
-            window.scrollTo({ top, behavior: 'smooth' });
-        }
-    });
-});
