@@ -84,7 +84,7 @@ const menuData = {
             { name: "Chá / Infusão", price: "1,20€" },
         ],
         "Sumos & Refrigerantes": [
-            { name: "A Copo", price: "1,50€" },
+            { name: "A Copo", price: "1,50€", desc: "Néctar" },
             { name: "Coca-Cola 33cl", price: "1,80€" },
             { name: "Coca-Cola Zero 33cl", price: "1,80€" },
             { name: "Sumol 33cl", price: "1,80€", desc: "Ananás | Laranja" },
