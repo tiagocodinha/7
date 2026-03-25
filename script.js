@@ -42,6 +42,7 @@ const menuData = {
             { name: "Triple Seco", price: "5,00€" },
             { name: "Safari", price: "7,00€" },
             { name: "Malibu", price: "7,00€" },
+            { name: "Jägermeister ", price: "6,00€" },
         ],
         "Aguardentes / Brandies": [
             { name: "Brandy Croft", price: "4,50€" },
@@ -54,11 +55,12 @@ const menuData = {
             { name: "Jameson", price: "7,00€" },
             { name: "Jack Daniel's", price: "7,50€" },
         ],
-        "Rum": [
+        "Rum & Tequila": [
             { name: "Bacardí Carta Blanca", price: "6,00€" },
             { name: "Bacardí Limón", price: "6,00€" },
             { name: "Bacardí Razz", price: "6,00€" },
             { name: "Bacardí Spiced", price: "6,50€" },
+            { name: "Tequila Camino Real", price: "5,00€" },
         ],
         "Shots": [
             { name: "Shot", price: "2,00€" },
