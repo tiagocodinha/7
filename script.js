@@ -6,7 +6,7 @@
 const menuData = {
     bar: {
         "Cervejas": [
-            { name: "Imperial", price: "X.XX€", desc: "Fino de pressão",
+            { name: "Imperial", price: "X.XX€", desc: "Fino de pressão"},
             { name: "Mini", price: "X.XX€", desc: "Cerveja de pressão" },
             { name: "Super Bock", price: "X.XX€", desc: "Garrafa" },
             { name: "Sagres", price: "X.XX€", desc: "Garrafa" },
