@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/tiago/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/872b237f-1247-44ed-8a65-59a2b66f40cb/e1ffc4fd-3468-467b-b31c-b7352b3a8a91/skills/docx/**)",
+      "Bash(pandoc \"C:/Users/tiago/Desktop/menu_completo.docx\" -o /tmp/menu_output.md)",
+      "Bash(python scripts/office/unpack.py \"C:/Users/tiago/Desktop/menu_completo.docx\" /tmp/menu_unpacked/)",
+      "Bash(where python3:*)",
+      "Bash(where python:*)",
+      "Bash(pip3 --version)",
+      "Bash(npm install:*)"
+    ]
+  }
+}
