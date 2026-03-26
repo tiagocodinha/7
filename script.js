@@ -60,7 +60,7 @@ const menuData = {
             { name: "William Lawson's", price: "6,00€" },
             { name: "Dewar's White Label", price: "6,50€" },
             { name: "Jameson", price: "7,00€" },
-            { name: "Jack Daniel's", price: "7,50€" },
+            { name: "Jack Daniel's", price: "8,00€" },
         ],
         "Rum & Tequila": [
             { name: "Bacardí Carta Blanca", price: "6,00€" },
