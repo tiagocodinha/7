@@ -112,12 +112,12 @@ const menuData = {
     },
     vinhos: {
         "Vinho Tinto": [
-            { name: "Paulo Laureano", price: "12,00€" },
-            { name: "Vallado", price: "16,00€" },
+            { name: "Paulo Laureano", priceGlass: "5,00€", priceBottle: "12,00€" },
+            { name: "Vallado", priceGlass: "6,00€", priceBottle: "16,00€" },
         ],
         "Vinho Branco": [
-            { name: "Paulo Laureano", price: "12,00€" },
-            { name: "Vallado", price: "16,00€" },
+            { name: "Paulo Laureano", priceGlass: "5,00€", priceBottle: "12,00€" },
+            { name: "Vallado", priceGlass: "6,00€", priceBottle: "16,00€" },
         ],
     },
 };
@@ -186,8 +186,10 @@ function renderMenu() {
 
     let html = '';
     for (const [category, items] of Object.entries(categoriesToRender)) {
+        const hasDoublePrice = items.some(item => item.priceGlass);
         html += `<div class="menu-category-block">
             <h3 class="menu-category-title">${category}</h3>
+            ${hasDoublePrice ? `<div class="menu-price-header"><span>A Copo</span><span>Garrafa</span></div>` : ''}
             <div class="menu-list">
                 ${items.map((item, i) =>
                     `<div class="menu-row" style="animation-delay: ${i * 0.03}s">
@@ -196,7 +198,10 @@ function renderMenu() {
                             ${item.desc ? `<span class="menu-row-desc">${item.desc}</span>` : ''}
                         </div>
                         <span class="menu-row-dots"></span>
-                        <span class="menu-row-price">${item.price}</span>
+                        ${item.priceGlass
+                            ? `<span class="menu-row-price menu-row-price-double"><span>${item.priceGlass}</span><span class="menu-price-sep">|</span><span>${item.priceBottle}</span></span>`
+                            : `<span class="menu-row-price">${item.price}</span>`
+                        }
                     </div>`
                 ).join('')}
             </div>
