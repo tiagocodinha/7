@@ -34,6 +34,7 @@ const menuData = {
             { name: "Eristoff Pink", price: "6,00€" },
             { name: "Eristoff Passion", price: "6,00€" },
             { name: "Grey Goose", price: "10,00€" },
+            { name: "Adição Red Bull", price: "2,00€" },
         ],
         "Gin": [
             { name: "Bombay Dry Gin", price: "6,50€" },
@@ -41,6 +42,7 @@ const menuData = {
             { name: "Bulldog", price: "10,00€" },
             { name: "Martin Miller's", price: "10,00€" },
             { name: "Hendrick's", price: "11,00€" },
+            { name: "Adição Red Bull", price: "2,00€" },
         ],
         "Licores": [
             { name: "Amêndoa Amarga", price: "3,50€" },
@@ -50,6 +52,7 @@ const menuData = {
             { name: "Safari", price: "7,00€" },
             { name: "Malibu", price: "7,00€" },
             { name: "Jägermeister ", price: "6,00€" },
+            { name: "Adição Red Bull", price: "2,00€" },
         ],
         "Aguardentes / Brandies": [
             { name: "Brandy Croft", price: "4,50€" },
@@ -61,6 +64,7 @@ const menuData = {
             { name: "Dewar's White Label", price: "6,50€" },
             { name: "Jameson", price: "7,00€" },
             { name: "Jack Daniel's", price: "8,00€" },
+            { name: "Adição Red Bull", price: "2,00€" },
         ],
         "Rum & Tequila": [
             { name: "Bacardí Carta Blanca", price: "6,00€" },
@@ -68,6 +72,7 @@ const menuData = {
             { name: "Bacardí Razz", price: "6,00€" },
             { name: "Bacardí Spiced", price: "6,50€" },
             { name: "Tequila Camino Real", price: "5,00€" },
+            { name: "Adição Red Bull", price: "2,00€" },
         ],
         "Shots": [
             { name: "Shot", price: "2,00€" },
@@ -100,6 +105,7 @@ const menuData = {
             { name: "Compal Néctar 20cl", price: "1,80€", desc: "Laranja do Algarve | Pêssego | Pêra | Maçã | Manga Laranja | Frutos Vermelhos" },
             { name: "Schweppes Tónica 20cl", price: "1,80€" },
             { name: "Schweppes Ginger Ale 20cl", price: "1,80€" },
+            { name: "Red Bull", price: "3,00€" },
             { name: "Sumo de Laranja Natural", price: "3,70€" },
         ],
         "Águas": [
@@ -172,6 +178,7 @@ const translations = {
             "Bandida do Pomar 20cl": "Cider 20cl",
             "Bandida do Pomar 40cl": "Cider 40cl",
             "Schweppes Tónica 20cl": "Schweppes Tonic 20cl",
+            "Adição Red Bull": "Add Red Bull",
         },
         descs: {
             "Tinto | Branco": "Red | White",
