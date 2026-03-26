@@ -661,7 +661,18 @@ img {
 
 /* --- Menu Section --- */
 .menu-page {
-    padding-bottom: 80px;
+    padding-bottom: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-page .menu-section {
+    flex: 1;
+}
+
+.menu-page .site-footer {
+    margin-top: auto;
 }
 
 .menu-section {
@@ -1340,7 +1351,6 @@ img {
 
 /* --- Home Page — Static fullscreen --- */
 .home-page {
-    overflow: hidden;
     height: 100vh;
     height: 100dvh;
 }
@@ -1377,12 +1387,11 @@ img {
 .site-footer {
     position: relative;
     z-index: 10;
-    padding: 32px 20px 24px;
-    text-align: center;
+    padding: 40px 20px 28px;
     font-family: var(--font);
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     color: var(--text-muted);
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 .home-page .site-footer {
@@ -1390,28 +1399,35 @@ img {
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 16px 20px;
+    padding: 14px 20px;
+    z-index: 100;
 }
 
 .footer-inner {
     max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
 }
 
 .footer-info {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
-    gap: 6px 16px;
-    margin-bottom: 8px;
+    gap: 6px;
 }
 
 .footer-name {
     font-family: var(--font-display);
     font-weight: 700;
     color: var(--text);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+}
+
+.footer-sep {
+    opacity: 0.6;
+    font-size: 0.6rem;
 }
 
 .footer-link {
@@ -1426,21 +1442,43 @@ img {
 
 .footer-legal {
     display: flex;
-    justify-content: center;
-    gap: 16px;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-legal-sep {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--text-muted);
+    opacity: 0.25;
+    flex-shrink: 0;
 }
 
 .footer-legal-link {
     color: var(--text-muted);
     text-decoration: none;
-    font-size: 0.7rem;
-    opacity: 0.6;
+    font-size: 0.68rem;
+    opacity: 0.4;
     transition: opacity 0.2s, color 0.2s;
 }
 
 .footer-legal-link:hover {
     opacity: 1;
     color: var(--accent);
+}
+
+@media (min-width: 768px) {
+    .footer-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0;
+    }
+
+    .footer-legal {
+        gap: 16px;
+    }
 }
 
 /* --- Cookie Banner --- */

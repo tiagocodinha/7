@@ -167,6 +167,11 @@ const translations = {
             "Água Luso 1,5L": "Luso Water 1.5L",
             "Água das Pedras Sabores": "Água das Pedras Flavours",
             "Água Castelo": "Castelo Water",
+            "Imperial Sagres 20cl": "Beer 20cl",
+            "Imperial Sagres 50cl": "Beer 50cl",
+            "Bandida do Pomar 20cl": "Cider 20cl",
+            "Bandida do Pomar 40cl": "Cider 40cl",
+            "Schweppes Tónica 20cl": "Schweppes Tonic 20cl",
         },
         descs: {
             "Tinto | Branco": "Red | White",
