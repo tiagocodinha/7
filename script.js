@@ -13,7 +13,14 @@ const menuData = {
             { name: "Tango / Panaché 20cl", price: "1,30€" },
         ],
         "Cocktails": [
-            { name: "Aperol Spritz", price: "" },
+            { name: "Aperol Spritz", price: "7,00€" },
+            { name: "Tequila Sunrise", price: "7,00€" },
+            { name: "Mojito", price: "8,00€" },
+            { name: "Morangoska", price: "8,00€" },
+            { name: "Caipirinha", price: "8,00€" },
+            { name: "Caipiroska", price: "8,00€", desc: "Black | White" },
+            { name: "Long Island Iced Tea", price: "9,00€" },
+            { name: "Moscow Mule", price: "9,00€" },
         ],
         "Aperitivos": [
             { name: "Porto Cadão", price: "2,80€", desc: "Tinto | Branco" },
