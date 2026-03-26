@@ -93,7 +93,7 @@ const menuData = {
             { name: "Compal Néctar 20cl", price: "1,80€", desc: "Laranja do Algarve | Pêssego | Pêra | Maçã | Manga Laranja | Frutos Vermelhos" },
             { name: "Schweppes Tónica 20cl", price: "1,80€" },
             { name: "Schweppes Ginger Ale 20cl", price: "1,80€" },
-            { name: "Sumo Laranja Natural", price: "3,70€" },
+            { name: "Sumo de Laranja Natural", price: "3,70€" },
         ],
         "Águas": [
             { name: "Água Luso 33cl", price: "1,20€" },
