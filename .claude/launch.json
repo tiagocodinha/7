@@ -4,7 +4,7 @@
     {
       "name": "menu",
       "runtimeExecutable": "node",
-      "runtimeArgs": ["-e", "require('http').createServer((q,r)=>{const fs=require('fs'),p=require('path'),f=p.join('.',q.url==='/'?'/menu/index.html':q.url),e=p.extname(f),t={'.html':'text/html','.css':'text/css','.js':'application/javascript','.png':'image/png','.jpg':'image/jpeg','.svg':'image/svg+xml','.woff2':'font/woff2'};fs.readFile(f,(err,d)=>{if(err){r.writeHead(404);r.end()}else{r.writeHead(200,{'Content-Type':t[e]||'application/octet-stream'});r.end(d)}})}).listen(3000)"],
+      "runtimeArgs": ["-e", "require('http').createServer((q,r)=>{const fs=require('fs'),p=require('path');let u=q.url.split('?')[0];if(u==='/')u='/index.html';else if(!p.extname(u))u=u.replace(/\\/?$/,'/index.html');const f=p.join('.',u),e=p.extname(f),t={'.html':'text/html','.css':'text/css','.js':'application/javascript','.png':'image/png','.jpg':'image/jpeg','.svg':'image/svg+xml','.woff2':'font/woff2'};fs.readFile(f,(err,d)=>{if(err){r.writeHead(404);r.end('Not found')}else{r.writeHead(200,{'Content-Type':t[e]||'application/octet-stream'});r.end(d)}})}).listen(3000)"],
       "port": 3000
     }
   ]

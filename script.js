@@ -122,9 +122,67 @@ const menuData = {
     },
 };
 
+// ---- Translations ----
+const translations = {
+    en: {
+        tabs: { bar: "Bar", cafetaria: "Coffee & Drinks", vinhos: "Wines" },
+        all: "All",
+        glassLabel: "Glass",
+        bottleLabel: "Bottle",
+        categories: {
+            "Cervejas & Sidras": "Beers & Ciders",
+            "Cocktails": "Cocktails",
+            "Aperitivos": "Aperitifs",
+            "Vodka": "Vodka",
+            "Gin": "Gin",
+            "Licores": "Liqueurs",
+            "Aguardentes / Brandies": "Spirits / Brandies",
+            "Whisky": "Whisky",
+            "Rum & Tequila": "Rum & Tequila",
+            "Shots": "Shots",
+            "Cafés": "Coffee",
+            "Sumos & Refrigerantes": "Juices & Soft Drinks",
+            "Águas": "Water",
+            "Vinho Tinto": "Red Wine",
+            "Vinho Branco": "White Wine",
+        },
+        items: {
+            "Expresso / Descafeinado": "Espresso / Decaf",
+            "Abatanado": "Long Black",
+            "Café Duplo": "Double Espresso",
+            "Garoto": "Cortado",
+            "Meia de Leite": "Half Milk Coffee",
+            "Galão": "Latte",
+            "Chocolate Quente": "Hot Chocolate",
+            "Copo de Leite": "Glass of Milk",
+            "Café com Natas": "Coffee with Cream",
+            "Carioca de Limão": "Lemon Carioca",
+            "Infusão de Limão": "Lemon Infusion",
+            "Chá / Infusão": "Tea / Infusion",
+            "A Copo": "By the Glass",
+            "Sumo de Laranja Natural": "Fresh Orange Juice",
+            "Amêndoa Amarga": "Bitter Almond",
+            "Ginja": "Sour Cherry Liqueur",
+            "Água Luso 33cl": "Luso Water 33cl",
+            "Água Luso 1,5L": "Luso Water 1.5L",
+            "Água das Pedras Sabores": "Água das Pedras Flavours",
+            "Água Castelo": "Castelo Water",
+        },
+        descs: {
+            "Tinto | Branco": "Red | White",
+            "Ananás | Laranja": "Pineapple | Orange",
+            "Manga | Pêssego | Limão": "Mango | Peach | Lemon",
+            "Laranja do Algarve | Pêssego | Pêra | Maçã | Manga Laranja | Frutos Vermelhos": "Algarve Orange | Peach | Pear | Apple | Mango Orange | Red Berries",
+            "Limão | Maracujá | Tangerina | Frutos Vermelhos | Ananás": "Lemon | Passion Fruit | Tangerine | Red Berries | Pineapple",
+            "Néctar": "Nectar",
+        },
+    },
+};
+
 // ---- State ----
 let currentMenuMode = 'bar';
 let currentCategory = null;
+let currentLang = 'pt';
 
 // ---- DOM ----
 const body = document.body;
@@ -155,19 +213,34 @@ if (window.matchMedia('(pointer: fine)').matches) {
     animateGlow();
 }
 
+// ---- Translation helpers ----
+function t(type, key) {
+    if (currentLang === 'pt') return key;
+    const map = translations[currentLang]?.[type];
+    return map?.[key] || key;
+}
+
+function tLabel(key) {
+    if (currentLang === 'pt') {
+        const ptLabels = { glassLabel: 'A Copo', bottleLabel: 'Garrafa', all: 'Todos' };
+        return ptLabels[key] || key;
+    }
+    return translations[currentLang]?.[key] || key;
+}
+
 // ---- Menu Rendering ----
 function getCategories(mode) {
     return Object.keys(menuData[mode]);
 }
 
-function renderCategoryPills(mode) {
+function renderCategoryPills(mode, resetCategory = true) {
     const categories = getCategories(mode);
-    currentCategory = null;
+    if (resetCategory) currentCategory = null;
 
     categoryPills.innerHTML =
-        `<button class="category-pill active" data-category="all">Todos</button>` +
+        `<button class="category-pill ${currentCategory === null ? 'active' : ''}" data-category="all">${tLabel('all')}</button>` +
         categories.map(cat =>
-            `<button class="category-pill" data-category="${cat}">${cat}</button>`
+            `<button class="category-pill ${currentCategory === cat ? 'active' : ''}" data-category="${cat}">${t('categories', cat)}</button>`
         ).join('');
 
     categoryPills.querySelectorAll('.category-pill').forEach(pill => {
@@ -180,6 +253,18 @@ function renderCategoryPills(mode) {
     });
 }
 
+function renderTabs() {
+    document.querySelectorAll('.menu-mode-tab').forEach(tab => {
+        const mode = tab.dataset.menuMode;
+        if (currentLang === 'pt') {
+            const ptTabs = { bar: 'Bar', cafetaria: 'Cafetaria', vinhos: 'Vinhos' };
+            tab.textContent = ptTabs[mode] || mode;
+        } else {
+            tab.textContent = translations[currentLang]?.tabs?.[mode] || mode;
+        }
+    });
+}
+
 function renderMenu() {
     const data = menuData[currentMenuMode];
     const categoriesToRender = currentCategory ? { [currentCategory]: data[currentCategory] } : data;
@@ -188,14 +273,14 @@ function renderMenu() {
     for (const [category, items] of Object.entries(categoriesToRender)) {
         const hasDoublePrice = items.some(item => item.priceGlass);
         html += `<div class="menu-category-block">
-            <h3 class="menu-category-title">${category}</h3>
-            ${hasDoublePrice ? `<div class="menu-price-header"><span>A Copo</span><span>Garrafa</span></div>` : ''}
+            <h3 class="menu-category-title">${t('categories', category)}</h3>
+            ${hasDoublePrice ? `<div class="menu-price-header"><span>${tLabel('glassLabel')}</span><span>${tLabel('bottleLabel')}</span></div>` : ''}
             <div class="menu-list">
                 ${items.map((item, i) =>
                     `<div class="menu-row" style="animation-delay: ${i * 0.03}s">
                         <div class="menu-row-left">
-                            <span class="menu-row-name">${item.name}${item.badge ? `<span class="menu-item-badge">${item.badge}</span>` : ''}</span>
-                            ${item.desc ? `<span class="menu-row-desc">${item.desc}</span>` : ''}
+                            <span class="menu-row-name">${t('items', item.name)}${item.badge ? `<span class="menu-item-badge">${item.badge}</span>` : ''}</span>
+                            ${item.desc ? `<span class="menu-row-desc">${t('descs', item.desc)}</span>` : ''}
                         </div>
                         <span class="menu-row-dots"></span>
                         ${item.priceGlass
@@ -223,8 +308,48 @@ document.querySelectorAll('.menu-mode-tab').forEach(tab => {
 });
 
 // Init
+renderTabs();
 renderCategoryPills(currentMenuMode);
 renderMenu();
+
+// ---- Language Switcher (inside nav) ----
+(function createLangSwitcher() {
+    const navInner = document.querySelector('.nav-inner');
+    const switcher = document.createElement('button');
+    switcher.className = 'lang-switcher';
+    switcher.setAttribute('aria-label', 'Switch language');
+    switcher.innerHTML = `<span class="lang-switcher-label">EN</span>`;
+    navInner.appendChild(switcher);
+
+    const label = switcher.querySelector('.lang-switcher-label');
+
+    switcher.addEventListener('click', () => {
+        const newLang = currentLang === 'pt' ? 'en' : 'pt';
+        currentLang = newLang;
+
+        // Pulse animation
+        switcher.classList.add('lang-switching');
+        setTimeout(() => switcher.classList.remove('lang-switching'), 400);
+
+        // Swap label with a quick flip
+        label.classList.add('lang-label-flip');
+        setTimeout(() => {
+            label.textContent = newLang === 'en' ? 'PT' : 'EN';
+        }, 150);
+        setTimeout(() => label.classList.remove('lang-label-flip'), 300);
+
+        // Animate menu content out, swap, animate in
+        menuContent.classList.add('menu-lang-exit');
+        setTimeout(() => {
+            renderTabs();
+            renderCategoryPills(currentMenuMode, false);
+            renderMenu();
+            menuContent.classList.remove('menu-lang-exit');
+            menuContent.classList.add('menu-lang-enter');
+            setTimeout(() => menuContent.classList.remove('menu-lang-enter'), 400);
+        }, 250);
+    });
+})();
 
 // ---- Nav Background on Scroll ----
 const nav = document.getElementById('nav');
