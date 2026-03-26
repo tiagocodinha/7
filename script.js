@@ -317,6 +317,21 @@ renderTabs();
 renderCategoryPills(currentMenuMode);
 renderMenu();
 
+// ---- Category scroll fade hint ----
+const scrollWrapper = document.querySelector('.category-scroll-wrapper');
+function checkScrollEnd() {
+    const el = categoryPills;
+    const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
+    scrollWrapper.classList.toggle('scrolled-end', atEnd);
+}
+categoryPills.addEventListener('scroll', checkScrollEnd);
+// Re-check whenever pills re-render
+const origRenderPills = renderCategoryPills;
+renderCategoryPills = function(...args) {
+    origRenderPills(...args);
+    setTimeout(checkScrollEnd, 50);
+};
+
 // ---- Language Switcher (inside nav) ----
 (function createLangSwitcher() {
     const navInner = document.querySelector('.nav-inner');
