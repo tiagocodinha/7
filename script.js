@@ -305,6 +305,15 @@ function renderMenu() {
         </div>`;
     }
 
+    const legalNotice1 = currentLang === 'en'
+        ? 'No dish, food product, or beverage, including the couvert, may be charged if not requested by the customer or if left unused by the customer.'
+        : 'Nenhum prato, produto alimentar ou bebida, incluindo o couvert, pode ser cobrado se não for solicitado pelo cliente ou por este for inutilizado.';
+    const legalNotice2 = currentLang === 'en'
+        ? 'If you suffer from any food intolerance or allergy, please inform our staff.'
+        : 'Caso sofra de alguma intolerância alimentar ou alergia alimentar por favor informe o nosso staff.';
+
+    html += `<div class="menu-legal-notice"><p>${legalNotice1}</p><p>${legalNotice2}</p></div>`;
+
     menuContent.innerHTML = html;
 }
 
