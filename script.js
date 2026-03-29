@@ -109,7 +109,7 @@ const menuData = {
             { name: "Sumo de Laranja Natural", price: "3,70€" },
         ],
         "Águas": [
-            { name: "Água Luso 33cl", price: "1,20€" },
+            { name: "Água Luso 50cl", price: "1,20€" },
             { name: "Água Luso 1,5L", price: "2,20€" },
             { name: "Água das Pedras", price: "1,50€" },
             { name: "Água das Pedras Sabores", price: "2,00€", desc: "Limão | Maracujá | Tangerina | Frutos Vermelhos | Ananás" },
@@ -169,7 +169,7 @@ const translations = {
             "Sumo de Laranja Natural": "Fresh Orange Juice",
             "Amêndoa Amarga": "Bitter Almond",
             "Ginja": "Sour Cherry Liqueur",
-            "Água Luso 33cl": "Luso Water 33cl",
+            "Água Luso 50cl": "Luso Water 50cl",
             "Água Luso 1,5L": "Luso Water 1.5L",
             "Água das Pedras Sabores": "Água das Pedras Flavours",
             "Água Castelo": "Castelo Water",
