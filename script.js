@@ -26,6 +26,7 @@ const menuData = {
             { name: "Porto Cadão", price: "2,80€", desc: "Tinto | Branco" },
             { name: "Martini Bianco", price: "3,60€" },
             { name: "Martini Rosso", price: "3,60€" },
+            { name: "Martini c/ Cerveja", price: "3,50€" },         
             { name: "Moscatel", price: "3,60€" },
         ],
         "Vodka": [
@@ -168,6 +169,7 @@ const translations = {
             "A Copo": "By the Glass",
             "Sumo de Laranja Natural": "Fresh Orange Juice",
             "Amêndoa Amarga": "Bitter Almond",
+            "Martini c/ Cerveja": "Martini with Beer",
             "Ginja": "Sour Cherry Liqueur",
             "Água Luso 50cl": "Luso Water 50cl",
             "Água Luso 1,5L": "Luso Water 1.5L",
