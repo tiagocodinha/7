@@ -75,6 +75,12 @@ const menuData = {
             { name: "Tequila Camino Real", price: "5,00€" },
             { name: "Adição Red Bull", price: "2,00€" },
         ],
+        "Sangrias": [
+            { name: "Sangria Tinta 30cl", price: "5,00€" },
+            { name: "Sangria Branca 30cl", price: "5,00€" },
+            { name: "Sangria Tinta 1L", price: "15,00€" },
+            { name: "Sangria Branca 1L", price: "15,00€" },
+        ],
         "Shots": [
             { name: "Shot", price: "2,00€" },
             { name: "Shot Premium", price: "3,00€" },
@@ -180,6 +186,10 @@ const translations = {
             "Bandida do Pomar 20cl": "Cider 20cl",
             "Bandida do Pomar 40cl": "Cider 40cl",
             "Schweppes Tónica 20cl": "Schweppes Tonic 20cl",
+            "Sangria Tinta 30cl": "Red Sangria 30cl",
+            "Sangria Branca 30cl": "White Sangria 30cl",
+            "Sangria Tinta 1L": "Red Sangria 1L",
+            "Sangria Branca 1L": "White Sangria 1L",
             "Adição Red Bull": "Add Red Bull",
         },
         descs: {
