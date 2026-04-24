@@ -81,6 +81,7 @@ const menuData = {
             { name: "Sangria Branca 30cl", price: "5,00€" },
             { name: "Sangria Tinta 1L", price: "15,00€" },
             { name: "Sangria Branca 1L", price: "15,00€" },
+            
         ],
         "Shots": [
             { name: "Shot", price: "2,00€" },
@@ -132,6 +133,7 @@ const menuData = {
         "Vinho Branco": [
             { name: "Paulo Laureano", priceGlass: "5,00€", priceBottle: "12,00€" },
             { name: "Vallado", priceGlass: "6,00€", priceBottle: "16,00€" },
+            { name: "Ribeiro Santo Encruzado", priceGlass: "9,00€", priceBottle: "24,00€" },
         ],
     },
 };
