@@ -952,6 +952,12 @@ img {
     gap: 6px;
 }
 
+.menu-row-price-double > span:not(.menu-price-sep) {
+    width: 60px;
+    text-align: center;
+    display: inline-block;
+}
+
 .menu-price-sep {
     color: var(--text-muted);
     font-weight: 400;

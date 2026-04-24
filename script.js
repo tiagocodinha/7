@@ -77,11 +77,10 @@ const menuData = {
             { name: "Adição Red Bull", price: "2,00€" },
         ],
         "Sangrias": [
-            { name: "Sangria Tinta 30cl", price: "5,00€" },
-            { name: "Sangria Branca 30cl", price: "5,00€" },
-            { name: "Sangria Tinta 1L", price: "15,00€" },
-            { name: "Sangria Branca 1L", price: "15,00€" },
-            
+            { name: "La Casera", priceGlass: "3,00€", priceJarro: "-" },
+            { name: "Tinta", priceGlass: "5,00€", priceJarro: "15,00€" },
+            { name: "Branca", priceGlass: "5,00€", priceJarro: "15,00€" },
+            { name: "Maracujá", priceGlass: "6,00€", priceJarro: "18,00€" },
         ],
         "Shots": [
             { name: "Shot", price: "2,00€" },
@@ -145,6 +144,7 @@ const translations = {
         all: "All",
         glassLabel: "Glass",
         bottleLabel: "Bottle",
+        jarLabel: "Jug",
         categories: {
             "Cervejas & Sidras": "Beers & Ciders",
             "Cocktails": "Cocktails",
@@ -189,10 +189,8 @@ const translations = {
             "Bandida do Pomar 20cl": "Cider 20cl",
             "Bandida do Pomar 40cl": "Cider 40cl",
             "Schweppes Tónica 20cl": "Schweppes Tonic 20cl",
-            "Sangria Tinta 30cl": "Red Sangria 30cl",
-            "Sangria Branca 30cl": "White Sangria 30cl",
-            "Sangria Tinta 1L": "Red Sangria 1L",
-            "Sangria Branca 1L": "White Sangria 1L",
+            "Sangria Tinta": "Red Sangria",
+            "Sangria Branca": "White Sangria",
             "Adição Red Bull": "Add Red Bull",
         },
         descs: {
@@ -249,7 +247,7 @@ function t(type, key) {
 
 function tLabel(key) {
     if (currentLang === 'pt') {
-        const ptLabels = { glassLabel: 'A Copo', bottleLabel: 'Garrafa', all: 'Todos' };
+        const ptLabels = { glassLabel: 'A Copo', bottleLabel: 'Garrafa', jarLabel: 'A Jarro', all: 'Todos' };
         return ptLabels[key] || key;
     }
     return translations[currentLang]?.[key] || key;
@@ -299,9 +297,10 @@ function renderMenu() {
     let html = '';
     for (const [category, items] of Object.entries(categoriesToRender)) {
         const hasDoublePrice = items.some(item => item.priceGlass);
+        const hasJarro = items.some(item => item.priceJarro);
         html += `<div class="menu-category-block">
             <h3 class="menu-category-title">${t('categories', category)}</h3>
-            ${hasDoublePrice ? `<div class="menu-price-header"><span>${tLabel('glassLabel')}</span><span>${tLabel('bottleLabel')}</span></div>` : ''}
+            ${hasDoublePrice ? `<div class="menu-price-header"><span>${tLabel('glassLabel')}</span><span>${hasJarro ? tLabel('jarLabel') : tLabel('bottleLabel')}</span></div>` : ''}
             <div class="menu-list">
                 ${items.map((item, i) =>
                     `<div class="menu-row" style="animation-delay: ${i * 0.03}s">
@@ -311,7 +310,7 @@ function renderMenu() {
                         </div>
                         <span class="menu-row-dots"></span>
                         ${item.priceGlass
-                            ? `<span class="menu-row-price menu-row-price-double"><span>${item.priceGlass}</span><span class="menu-price-sep">|</span><span>${item.priceBottle}</span></span>`
+                            ? `<span class="menu-row-price menu-row-price-double"><span>${item.priceGlass}</span><span class="menu-price-sep">|</span><span>${item.priceJarro || item.priceBottle}</span></span>`
                             : `<span class="menu-row-price">${item.price}</span>`
                         }
                     </div>`
