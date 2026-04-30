@@ -135,12 +135,27 @@ const menuData = {
             { name: "Ribeiro Santo Encruzado", priceGlass: "9,00€", priceBottle: "24,00€" },
         ],
     },
+    snacks: {
+        "Batatas Fritas": [
+            { name: "Doritos Tex Mex", price: "2,00€" },
+            { name: "Ruffles Presunto", price: "2,00€" },
+            { name: "Lays 3Ds", price: "2,00€" },
+            { name: "Cheetos Futebolas", price: "2,00€" },
+            { name: "Lays Sal", price: "2,00€" },
+            { name: "Ruffles Sal", price: "2,00€" },
+        ],
+        "Outros": [
+            { name: "Chupa Chups", price: "0,50€" },
+            { name: "Trident Morango", price: "1,50€" },
+            { name: "Trident Menta", price: "1,50€" },
+        ],
+    },
 };
 
 // ---- Translations ----
 const translations = {
     en: {
-        tabs: { bar: "Bar", cafetaria: "Coffee & Drinks", vinhos: "Wines" },
+        tabs: { bar: "Bar", cafetaria: "Coffee & Drinks", vinhos: "Wines", snacks: "Snacks" },
         all: "All",
         glassLabel: "Glass",
         bottleLabel: "Bottle",
@@ -161,6 +176,8 @@ const translations = {
             "Águas": "Water",
             "Vinho Tinto": "Red Wine",
             "Vinho Branco": "White Wine",
+            "Batatas Fritas": "Crisps",
+            "Outros": "Other",
         },
         items: {
             "Expresso / Descafeinado": "Espresso / Decaf",
@@ -282,7 +299,7 @@ function renderTabs() {
     document.querySelectorAll('.menu-mode-tab').forEach(tab => {
         const mode = tab.dataset.menuMode;
         if (currentLang === 'pt') {
-            const ptTabs = { bar: 'Bar', cafetaria: 'Cafetaria', vinhos: 'Vinhos' };
+            const ptTabs = { bar: 'Bar', cafetaria: 'Cafetaria', vinhos: 'Vinhos', snacks: 'Snacks' };
             tab.textContent = ptTabs[mode] || mode;
         } else {
             tab.textContent = translations[currentLang]?.tabs?.[mode] || mode;
