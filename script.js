@@ -114,6 +114,7 @@ const menuData = {
             { name: "Schweppes Tónica 20cl", price: "1,80€" },
             { name: "Schweppes Ginger Ale 20cl", price: "1,80€" },
             { name: "Red Bull", price: "3,00€" },
+            { name: "Limonada", price: "3,00€" },
             { name: "Sumo de Laranja Natural", price: "3,70€" },
         ],
         "Águas": [
@@ -209,6 +210,7 @@ const translations = {
             "Sangria Tinta": "Red Sangria",
             "Sangria Branca": "White Sangria",
             "Adição Red Bull": "Add Red Bull",
+            "Limonada": "Lemonade",
         },
         descs: {
             "Tinto | Branco": "Red | White",
