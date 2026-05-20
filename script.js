@@ -176,7 +176,10 @@ const menuData = {
 
 // ---- Disabled Categories (add category name to hide it from the menu) ----
 const disabledCategories = new Set([
-    // "Padaria & Pastelaria",
+    "Padaria & Pastelaria",
+    "Entradas",
+    "Snacks & Tostas",
+    "Hambúrgueres",
 ]);
 
 // ---- Category Notes ----
@@ -280,9 +283,9 @@ const translations = {
             "Queijo e Fiambre": "Cheese and Ham",
             "Pasta, Alface, Tomate, Milho e Cenoura": "Spread, Lettuce, Tomato, Sweetcorn and Carrot",
             "Queijo, Presunto, Ovo, Tomate": "Cheese, Cured Ham, Egg and Tomato",
-            "Pão, Carne de Vaca, Queijo, Alface e Tomate": "Bun, beef patty, cheese, lettuce and tomato",
-            "Pão de Beterraba, Hambúrguer Grão e Quinoa, Alface e Tomate": "Beetroot bun, chickpea and quinoa burger, lettuce and tomato",
-            "Pão, Carne de Vaca, Queijo, Bacon, Ovo, Alface e Tomate": "Bun, beef patty, cheese, bacon, egg, lettuce and tomato",
+            "Pão, Carne de Vaca, Queijo, Alface e Tomate": "Bun, Beef Patty, Cheese, Lettuce and Tomato",
+            "Pão de Beterraba, Hambúrguer Grão e Quinoa, Alface e Tomate": "Beetroot Bun, Chickpea and Quinoa Burger, Lettuce and Tomato",
+            "Pão, Carne de Vaca, Queijo, Bacon, Ovo, Alface e Tomate": "Bun, Beef Patty, Cheese, Bacon, Egg, Lettuce and Tomato",
         },
         notes: {
             "* Acompanhado com Chips": "* Served with Chips",
