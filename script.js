@@ -137,20 +137,52 @@ const menuData = {
         ],
     },
     snacks: {
-        "Batatas Fritas": [
-            { name: "Doritos Tex Mex", price: "2,00€" },
-            { name: "Ruffles Presunto", price: "2,00€" },
-            { name: "Lays 3Ds", price: "2,00€" },
-            { name: "Cheetos Futebolas", price: "2,00€" },
+        "Padaria & Pastelaria": [
+            { name: "Pão com Chouriço", price: "" },
+            { name: "Pastel de Nata", price: "" },
+            { name: "Mil Folhas", price: "" },
+            { name: "Croissant Simples", price: "" },
+            { name: "Croissant Misto", price: "" },
+            { name: "Torrada", price: "" },
+        ],
+        "Entradas": [
+            { name: "Nachos e Molho", price: "" },
+            { name: "Batatas Fritas", price: "" },
+            { name: "Pão com Manteiga de Alho e Queijo", price: "" },
+            { name: "Tábua de Aperitivos", price: "" },
+            { name: "Tábua de Queijos", price: "" },
+        ],
+        "Snacks & Tostas": [
+            { name: "Bifana", price: "", desc: "Queijo" },
+            { name: "Tosta Mista*", price: "", desc: "Queijo e Fiambre" },
+            { name: "Tosta Atum · Frango*", price: "", desc: "Pasta, Alface, Tomate, Milho e Cenoura" },
+            { name: "Tosta Presunto*", price: "", desc: "Queijo, Presunto, Ovo, Tomate" },
+        ],
+        "Hambúrgueres": [
+            { name: "Hambúrguer Cheese*", price: "", desc: "Pão, Carne de Vaca, Queijo, Alface e Tomate" },
+            { name: "Hambúrguer Vegetariano*", price: "", desc: "Pão, Hambúrguer Vegetal, Alface e Tomate" },
+            { name: "Hambúrguer Bacon*", price: "", desc: "Pão, Carne de Vaca, Queijo, Bacon, Ovo, Alface e Tomate" },
+        ],
+        "Extras": [
             { name: "Lays Sal", price: "2,00€" },
             { name: "Ruffles Sal", price: "2,00€" },
-        ],
-        "Outros": [
+            { name: "Ruffles Presunto", price: "2,00€" },
             { name: "Chupa Chups", price: "0,50€" },
             { name: "Trident Morango", price: "1,50€" },
             { name: "Trident Menta", price: "1,50€" },
         ],
     },
+};
+
+// ---- Disabled Categories (add category name to hide it from the menu) ----
+const disabledCategories = new Set([
+    // "Padaria & Pastelaria",
+]);
+
+// ---- Category Notes ----
+const menuCategoryNotes = {
+    "Snacks & Tostas": "* Acompanhado com Chips",
+    "Hambúrgueres": "* Acompanhado com Chips",
 };
 
 // ---- Translations ----
@@ -177,8 +209,11 @@ const translations = {
             "Águas": "Water",
             "Vinho Tinto": "Red Wine",
             "Vinho Branco": "White Wine",
-            "Batatas Fritas": "Crisps",
-            "Outros": "Other",
+            "Padaria & Pastelaria": "Bakery & Pastry",
+            "Entradas": "Starters",
+            "Snacks & Tostas": "Snacks & Toasts",
+            "Hambúrgueres": "Burgers",
+            "Extras": "Extras",
         },
         items: {
             "Expresso / Descafeinado": "Espresso / Decaf",
@@ -211,6 +246,28 @@ const translations = {
             "Sangria Branca": "White Sangria",
             "Adição Red Bull": "Add Red Bull",
             "Limonada 25cl": "Lemonade 25cl",
+            "Pão com Chouriço": "Chorizo Bread",
+            "Mil Folhas": "Mille-Feuille",
+            "Croissant Simples": "Plain Croissant",
+            "Croissant Misto": "Ham & Cheese Croissant",
+            "Torrada": "Toast",
+            "Nachos e Molho": "Nachos & Dip",
+            "Batatas Fritas": "French Fries",
+            "Pão com Manteiga de Alho e Queijo": "Garlic Butter & Cheese Bread",
+            "Tábua de Aperitivos": "Appetizer Board",
+            "Tábua de Queijos": "Cheese Board",
+            "Bifana": "Bifana",
+            "Tosta Mista*": "Mixed Toast*",
+            "Tosta Atum · Frango*": "Tuna · Chicken Toast*",
+            "Tosta Presunto*": "Ham Toast*",
+            "Hambúrguer Cheese*": "Cheeseburger*",
+            "Hambúrguer Vegetariano*": "Veggie Burger*",
+            "Hambúrguer Bacon*": "Bacon Burger*",
+            "Ruffles Presunto": "Ruffles Ham",
+            "Lays Sal": "Lays Salt",
+            "Ruffles Sal": "Ruffles Salt",
+            "Trident Morango": "Trident Strawberry",
+            "Trident Menta": "Trident Mint",
         },
         descs: {
             "Tinto | Branco": "Red | White",
@@ -219,6 +276,16 @@ const translations = {
             "Laranja do Algarve | Pêssego | Pêra | Maçã | Manga Laranja | Frutos Vermelhos": "Algarve Orange | Peach | Pear | Apple | Mango Orange | Red Berries",
             "Limão | Maracujá | Açaí | Frutos Vermelhos | Ananás": "Lemon | Passion Fruit | Açaí | Red Berries | Pineapple",
             "Néctar": "Nectar",
+            "Queijo": "Cheese",
+            "Queijo e Fiambre": "Cheese and Ham",
+            "Pasta, Alface, Tomate, Milho e Cenoura": "Paste, Lettuce, Tomato, Corn and Carrot",
+            "Queijo, Presunto, Ovo, Tomate": "Cheese, Ham, Egg, Tomato",
+            "Pão, Carne de Vaca, Queijo, Alface e Tomate": "Bun, Beef, Cheese, Lettuce and Tomato",
+            "Pão, Hambúrguer Vegetal, Alface e Tomate": "Bun, Veggie Patty, Lettuce and Tomato",
+            "Pão, Carne de Vaca, Queijo, Bacon, Ovo, Alface e Tomate": "Bun, Beef, Cheese, Bacon, Egg, Lettuce and Tomato",
+        },
+        notes: {
+            "* Acompanhado com Chips": "* Served with Chips",
         },
     },
 };
@@ -274,7 +341,7 @@ function tLabel(key) {
 
 // ---- Menu Rendering ----
 function getCategories(mode) {
-    return Object.keys(menuData[mode]);
+    return Object.keys(menuData[mode]).filter(cat => !disabledCategories.has(cat));
 }
 
 function renderCategoryPills(mode, resetCategory = true) {
@@ -311,7 +378,9 @@ function renderTabs() {
 
 function renderMenu() {
     const data = menuData[currentMenuMode];
-    const categoriesToRender = currentCategory ? { [currentCategory]: data[currentCategory] } : data;
+    const categoriesToRender = currentCategory
+        ? { [currentCategory]: data[currentCategory] }
+        : Object.fromEntries(Object.entries(data).filter(([cat]) => !disabledCategories.has(cat)));
 
     let html = '';
     for (const [category, items] of Object.entries(categoriesToRender)) {
@@ -335,6 +404,7 @@ function renderMenu() {
                     </div>`
                 ).join('')}
             </div>
+            ${menuCategoryNotes[category] ? `<p class="menu-category-note">${t('notes', menuCategoryNotes[category])}</p>` : ''}
         </div>`;
     }
 

@@ -839,6 +839,14 @@ img {
     margin-bottom: 48px;
 }
 
+.menu-category-note {
+    margin-top: 8px;
+    font-family: var(--font);
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
 .menu-legal-notice {
     margin-top: 16px;
     padding: 16px 0;
