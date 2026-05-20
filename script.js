@@ -114,8 +114,8 @@ const menuData = {
             { name: "Schweppes Tónica 20cl", price: "1,80€" },
             { name: "Schweppes Ginger Ale 20cl", price: "1,80€" },
             { name: "Red Bull", price: "3,00€" },
-            { name: "Limonada", price: "3,00€" },
-            { name: "Sumo de Laranja Natural", price: "3,70€" },
+            { name: "Limonada 25cl", price: "3,00€" },
+            { name: "Sumo de Laranja Natural 25cl", price: "3,50€" },
         ],
         "Águas": [
             { name: "Água Luso 50cl", price: "1,20€" },
@@ -194,7 +194,7 @@ const translations = {
             "Infusão de Limão": "Lemon Infusion",
             "Chá / Infusão": "Tea / Infusion",
             "A Copo": "By the Glass",
-            "Sumo de Laranja Natural": "Fresh Orange Juice",
+            "Sumo de Laranja Natural 25cl": "Fresh Orange Juice 25cl",
             "Amêndoa Amarga": "Bitter Almond",
             "Martini c/ Cerveja": "Martini with Beer",
             "Ginja": "Sour Cherry Liqueur",
@@ -210,7 +210,7 @@ const translations = {
             "Sangria Tinta": "Red Sangria",
             "Sangria Branca": "White Sangria",
             "Adição Red Bull": "Add Red Bull",
-            "Limonada": "Lemonade",
+            "Limonada 25cl": "Lemonade 25cl",
         },
         descs: {
             "Tinto | Branco": "Red | White",
