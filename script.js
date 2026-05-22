@@ -138,30 +138,30 @@ const menuData = {
     },
     snacks: {
         "Padaria & Pastelaria": [
-            { name: "Pão com Chouriço", price: "" },
-            { name: "Pastel de Nata", price: "" },
-            { name: "Mil Folhas", price: "" },
-            { name: "Croissant Simples", price: "" },
-            { name: "Croissant Misto", price: "" },
-            { name: "Torrada", price: "" },
+            { name: "Pão com Chouriço", price: "", hidden: true },
+            { name: "Pastel de Nata", price: "", hidden: true },
+            { name: "Mil Folhas", price: "", hidden: true },
+            { name: "Croissant Simples", price: "", hidden: true },
+            { name: "Croissant Misto", price: "", hidden: true },
+            { name: "Torrada", price: "2,00€" },
         ],
         "Entradas": [
-            { name: "Nachos e Molho", price: "" },
-            { name: "Batatas Fritas", price: "" },
-            { name: "Pão com Manteiga de Alho e Queijo", price: "" },
-            { name: "Tábua de Aperitivos", price: "" },
-            { name: "Tábua de Queijos", price: "" },
+            { name: "Nachos e Molho", price: "3,00€", hidden: true  },
+            { name: "Batatas Fritas", price: "3,00€" },
+            { name: "Pão com Manteiga de Alho e Queijo", price: "3,50€" },
+            { name: "Tábua de Aperitivos", price: "4,00€", desc: "Azeitonas, Amendoins e Tremoços", hidden: true  },
+            { name: "Tábua de Queijos", price: "8,00€", hidden: true  },
         ],
         "Snacks & Tostas": [
-            { name: "Bifana", price: "", desc: "Queijo" },
-            { name: "Tosta Mista*", price: "", desc: "Queijo e Fiambre" },
-            { name: "Tosta Atum · Frango*", price: "", desc: "Pasta, Alface, Tomate, Milho e Cenoura" },
-            { name: "Tosta Presunto*", price: "", desc: "Queijo, Presunto, Ovo, Tomate" },
+            { name: "Bifana", price: "3,50€", desc: "Queijo" },
+            { name: "Tosta Mista*", price: "4,50€", desc: "Queijo e Fiambre" },
+            { name: "Tosta Atum · Frango*", price: "5,00€", desc: "Pasta, Alface, Tomate, Milho e Cenoura" },
+            { name: "Tosta Presunto*", price: "6,50€", desc: "Queijo, Presunto, Ovo, Tomate" },
         ],
         "Hambúrgueres": [
-            { name: "Hambúrguer Cheese*", price: "", desc: "Pão, Carne de Vaca, Queijo, Alface e Tomate" },
-            { name: "Hambúrguer Vegetariano*", price: "", desc: "Pão de Beterraba, Hambúrguer Grão e Quinoa, Alface e Tomate" },
-            { name: "Hambúrguer Bacon*", price: "", desc: "Pão, Carne de Vaca, Queijo, Bacon, Ovo, Alface e Tomate" },
+            { name: "Hambúrguer Cheese*", price: "6,00€", desc: "Pão, Carne de Vaca, Queijo, Alface e Tomate" },
+            { name: "Hambúrguer Vegetariano*", price: "6,50€", desc: "Pão de Beterraba, Hambúrguer Grão e Quinoa, Alface e Tomate" },
+            { name: "Hambúrguer Bacon*", price: "7,50€", desc: "Pão, Carne de Vaca, Queijo, Bacon, Ovo, Alface e Tomate" },
         ],
         "Extras": [
             { name: "Lays Sal", price: "2,00€" },
@@ -176,10 +176,7 @@ const menuData = {
 
 // ---- Disabled Categories (add category name to hide it from the menu) ----
 const disabledCategories = new Set([
-    "Padaria & Pastelaria",
-    "Entradas",
-    "Snacks & Tostas",
-    "Hambúrgueres",
+
 ]);
 
 // ---- Category Notes ----
@@ -279,6 +276,7 @@ const translations = {
             "Laranja do Algarve | Pêssego | Pêra | Maçã | Manga Laranja | Frutos Vermelhos": "Algarve Orange | Peach | Pear | Apple | Mango Orange | Red Berries",
             "Limão | Maracujá | Açaí | Frutos Vermelhos | Ananás": "Lemon | Passion Fruit | Açaí | Red Berries | Pineapple",
             "Néctar": "Nectar",
+            "Azeitonas, Amendoins e Tremoços": "Olives, Peanuts and Lupini Beans",
             "Queijo": "Cheese",
             "Queijo e Fiambre": "Cheese and Ham",
             "Pasta, Alface, Tomate, Milho e Cenoura": "Spread, Lettuce, Tomato, Sweetcorn and Carrot",
@@ -386,7 +384,9 @@ function renderMenu() {
         : Object.fromEntries(Object.entries(data).filter(([cat]) => !disabledCategories.has(cat)));
 
     let html = '';
-    for (const [category, items] of Object.entries(categoriesToRender)) {
+    for (const [category, allItems] of Object.entries(categoriesToRender)) {
+        const items = allItems.filter(item => !item.hidden);
+        if (items.length === 0) continue;
         const hasDoublePrice = items.some(item => item.priceGlass);
         const hasJarro = items.some(item => item.priceJarro);
         html += `<div class="menu-category-block">
