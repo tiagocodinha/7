@@ -149,8 +149,8 @@ const menuData = {
             { name: "Nachos e Molho", price: "3,00€", hidden: true  },
             { name: "Batatas Fritas", price: "3,00€" },
             { name: "Pão com Manteiga de Alho e Queijo", price: "3,50€" },
-            { name: "Tábua de Aperitivos", price: "4,00€", desc: "Azeitonas, Amendoins e Tremoços", hidden: true  },
-            { name: "Tábua de Queijos", price: "8,00€", hidden: true  },
+            { name: "Tábua de Aperitivos", price: "4,00€", desc: "Azeitonas, Amendoins e Tremoços"  },
+            { name: "Tábua de Queijos", price: "10,00€", },
         ],
         "Snacks & Tostas": [
             { name: "Bifana", price: "3,50€", desc: "Queijo" },
