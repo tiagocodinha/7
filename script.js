@@ -155,7 +155,8 @@ const menuData = {
         "Snacks & Tostas": [
             { name: "Bifana", price: "3,50€", desc: "Queijo" },
             { name: "Tosta Mista*", price: "4,50€", desc: "Queijo e Fiambre" },
-            { name: "Tosta Atum · Frango*", price: "5,00€", desc: "Pasta, Alface, Tomate, Milho e Cenoura" },
+            { name: "Tosta Atum*", price: "5,00€", desc: "Pasta, Alface, Tomate, Milho e Cenoura" },
+            { name: "Tosta Frango*", price: "5,00€", desc: "Pasta, Alface, Tomate, Milho e Cenoura" },
             { name: "Tosta Presunto*", price: "6,50€", desc: "Queijo, Presunto, Ovo, Tomate" },
         ],
         "Hambúrgueres": [
@@ -258,7 +259,8 @@ const translations = {
             "Tábua de Queijos": "Cheese Board",
             "Bifana": "Bifana",
             "Tosta Mista*": "Cheese and Ham Toastie*",
-            "Tosta Atum · Frango*": "Tuna · Chicken Toastie*",
+            "Tosta Atum*": "Tuna Toastie*",
+            "Tosta Frango*": "Chicken Toastie*",
             "Tosta Presunto*": "Cured Ham Toastie*",
             "Hambúrguer Cheese*": "Cheeseburger*",
             "Hambúrguer Vegetariano*": "Vegetarian Burger*",
