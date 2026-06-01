@@ -146,7 +146,7 @@ const menuData = {
             { name: "Torrada", price: "2,00€" },
         ],
         "Entradas": [
-            { name: "Nachos e Molho", price: "3,00€", hidden: true  },
+            { name: "Nachos e Molho", price: "3,00€" },
             { name: "Batatas Fritas", price: "3,00€" },
             { name: "Pão com Manteiga de Alho e Queijo", price: "3,50€" },
             { name: "Tábua de Aperitivos", price: "4,00€", desc: "Azeitonas, Amendoins e Tremoços"  },
