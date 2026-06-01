@@ -83,8 +83,8 @@ const menuData = {
             { name: "Maracujá", priceGlass: "6,00€", priceJarro: "18,00€" },
         ],
         "Shots": [
-            { name: "Shot", price: "2,00€" },
-            { name: "Shot Premium", price: "3,00€" },
+            { name: "Shot", price: "3,00€" },
+            { name: "Shot Premium", price: "5,00€" },
         ],
     },
     cafetaria: {
