@@ -8,6 +8,8 @@ const menuData = {
         "Cervejas & Sidras": [
             { name: "Imperial Sagres 20cl", price: "1,30€" },
             { name: "Imperial Sagres 50cl", price: "3,50€" },
+            { name: "Sagres Preta 33cl", price: "2,00€" },
+            { name: "Sagres Branca 0% Álcool 33cl", price: "2,00€" },
             { name: "Bandida do Pomar 20cl", price: "1,80€" },
             { name: "Bandida do Pomar 40cl", price: "3,50€" },
             { name: "Tango / Panaché 20cl", price: "1,30€" },
@@ -165,6 +167,7 @@ const menuData = {
             { name: "Hambúrguer Bacon*", price: "7,50€", desc: "Pão, Carne de Vaca, Queijo, Bacon, Ovo, Alface e Tomate" },
         ],
         "Extras": [
+            { name: "Tremoços", price: "0,50€" },
             { name: "Lays Sal", price: "2,00€" },
             { name: "Ruffles Sal", price: "2,00€" },
             { name: "Ruffles Presunto", price: "2,00€" },
@@ -240,6 +243,8 @@ const translations = {
             "Água Castelo": "Castelo Water",
             "Imperial Sagres 20cl": "Beer 20cl",
             "Imperial Sagres 50cl": "Beer 50cl",
+            "Sagres Preta 33cl": "Sagres Dark 33cl",
+            "Sagres Branca 0% Álcool 33cl": "Sagres 0% Alcohol 33cl",
             "Bandida do Pomar 20cl": "Cider 20cl",
             "Bandida do Pomar 40cl": "Cider 40cl",
             "Schweppes Tónica 20cl": "Schweppes Tonic 20cl",
@@ -257,6 +262,7 @@ const translations = {
             "Pão com Manteiga de Alho e Queijo": "Garlic Butter & Cheese Bread",
             "Tábua de Aperitivos": "Appetizer Board",
             "Tábua de Queijos": "Cheese Board",
+            "Tremoços": "Lupini Beans",
             "Bifana": "Bifana",
             "Tosta Mista*": "Cheese and Ham Toastie*",
             "Tosta Atum*": "Tuna Toastie*",
