@@ -13,7 +13,9 @@
       "Bash(where php:*)",
       "Bash(python -c \"from PIL import Image; img = Image.open\\(''7iks_logo.jpg''\\); print\\(img.size\\)\")",
       "Bash(python3 -c \"from PIL import Image; img = Image.open\\(''7iks_logo.jpg''\\); print\\(img.size\\)\")",
-      "Bash(node -e \"const fs=require\\(''fs''\\); const b=fs.readFileSync\\(''7iks_logo.jpg''\\); const w=b.readUInt16BE\\(b.indexOf\\(Buffer.from\\(''ffc0'',''hex''\\)\\)+5\\); const h=b.readUInt16BE\\(b.indexOf\\(Buffer.from\\(''ffc0'',''hex''\\)\\)+7\\); console.log\\(h+''x''+w\\)\")"
+      "Bash(node -e \"const fs=require\\(''fs''\\); const b=fs.readFileSync\\(''7iks_logo.jpg''\\); const w=b.readUInt16BE\\(b.indexOf\\(Buffer.from\\(''ffc0'',''hex''\\)\\)+5\\); const h=b.readUInt16BE\\(b.indexOf\\(Buffer.from\\(''ffc0'',''hex''\\)\\)+7\\); console.log\\(h+''x''+w\\)\")",
+      "Bash(git commit --allow-empty -m ' *)",
+      "Bash(git push *)"
     ]
   }
 }
