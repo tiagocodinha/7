@@ -146,6 +146,7 @@ const menuData = {
             { name: "Croissant Simples", price: "", hidden: true },
             { name: "Croissant Misto", price: "", hidden: true },
             { name: "Torrada", price: "2,00€" },
+            { name: "Sandes Mista", price: "2,00€", desc: "Queijo e Fiambre" },
         ],
         "Entradas": [
             { name: "Nachos e Molho", price: "3,00€" },
@@ -263,6 +264,7 @@ const translations = {
             "Tábua de Aperitivos": "Appetizer Board",
             "Tábua de Queijos": "Cheese Board",
             "Tremoços": "Lupini Beans",
+            "Sandes Mista": "Mixed Sandwich",
             "Bifana": "Bifana",
             "Tosta Mista*": "Cheese and Ham Toastie*",
             "Tosta Atum*": "Tuna Toastie*",
