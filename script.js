@@ -55,7 +55,7 @@ const menuData = {
             { name: "Safari", price: "7,00€" },
             { name: "Malibu", price: "7,00€" },
             { name: "Baileys", price: "7,00€" },
-            { name: "Jägermeister ", price: "6,00€" },
+            { name: "Jägermeister", price: "6,00€" },
             { name: "Adição Red Bull", price: "2,00€" },
         ],
         "Aguardentes / Brandies": [
