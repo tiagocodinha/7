@@ -112,7 +112,7 @@ const menuData = {
             { name: "Sumol 33cl", price: "1,80€", desc: "Ananás | Laranja" },
             { name: "7Up 33cl", price: "1,80€" },
             { name: "Ice Tea 33cl", price: "1,80€", desc: "Manga | Pêssego | Limão" },
-            { name: "Compal Néctar 20cl", price: "1,80€", desc: "Laranja do Algarve | Pêssego | Pêra | Maçã | Manga Laranja | Frutos Vermelhos" },
+            { name: "Compal Néctar 20cl", price: "1,80€", desc: "Laranja do Algarve | Pêssego | Pera | Maçã | Manga Laranja | Frutos Vermelhos" },
             { name: "Schweppes Tónica 20cl", price: "1,80€" },
             { name: "Schweppes Ginger Ale 20cl", price: "1,80€" },
             { name: "Red Bull", price: "3,00€" },
