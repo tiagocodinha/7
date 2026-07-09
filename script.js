@@ -140,11 +140,7 @@ const menuData = {
     },
     snacks: {
         "Padaria & Pastelaria": [
-            { name: "Pão com Chouriço", price: "", hidden: true },
-            { name: "Pastel de Nata", price: "", hidden: true },
-            { name: "Mil Folhas", price: "", hidden: true },
-            { name: "Croissant Simples", price: "", hidden: true },
-            { name: "Croissant Misto", price: "", hidden: true },
+            { name: "Pastel de Nata", price: "1,60€" },
             { name: "Torrada", price: "2,00€" },
             { name: "Sandes Mista", price: "2,00€", desc: "Queijo e Fiambre" },
         ],
